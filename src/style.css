@@ -1,0 +1,170 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter_18pt-Medium.woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter_18pt-SemiBold.woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter_24pt-Bold.woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Balsamiq Sans";
+  src: url("./assets/fonts/BalsamiqSans-Regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Kaisei Decol";
+  src: url("./assets/fonts/KaiseiDecol-Regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* colors */
+  --main-accent-color: #ffba00;
+  --secondary-accent-color: #bb8a52;
+  --main-text-color: #0c3e2e;
+  --secondary-text-color: #d9d9d9;
+  --main-bg-color: #fbfdf8;
+  --secondary-bg-color: #6d9773;
+  --link-color: #cc2e2e;
+
+  /* font sizes */
+  --fsz-14: 0.875rem;
+  --fsz-16: 1rem;
+  --fsz-18: 1.125rem;
+  --fsz-20: 1.25rem;
+  --fsz-22: 1.375rem;
+  --fsz-24: 1.5rem;
+  --fsz-28: 1.75rem;
+  --fsz-36: 2.25rem;
+  --fsz-48: 3rem;
+  --fsz-96: 6rem;
+  --fsz-64: 4rem;
+  --fsz-128: 8rem;
+  /* line height */
+
+  --lh-normal: 1.2;
+
+  /* font family */
+  --main-ff: "Inter", sans-serif;
+  --secondary-ff: "Kaisei Decol", sans-serif;
+  --additional-ff: "Balsamiq Sans", sans-serif;
+
+  /* font weight */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* sizes */
+  --size-150: 150px;
+  --size-50: 50px;
+  --size-30: 30px;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+}
+body {
+  font-family: var(--main-ff);
+  font-size: clamp(var(--fsz-14), 1.724vw + 0.047rem, var(--fsz-18));
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-normal);
+  color: var(--main-text-color);
+}
+h1,
+h2,
+h3 {
+  font-weight: var(--fw-semibold);
+}
+h1 {
+  font-size: clamp(var(--fsz-28), 8.621vw + -2.388rem, var(--fsz-48));
+}
+h2 {
+  font-size: clamp(var(--fsz-28), 3.448vw + 0.095rem, var(--fsz-36));
+}
+h3,
+.desc-text {
+  font-size: clamp(var(--fsz-14), 4.31vw + -0.944rem, var(--fsz-28));
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button,
+input,
+textarea {
+  font: inherit;
+}
+.wrapper {
+  max-width: 1199px;
+  width: 94%;
+  margin-inline: auto;
+}
+.desc-text {
+  font-weight: var(--fw-semibold);
+}
+.text-center {
+  text-align: center;
+}
+.text-big {
+  font-size: var(--fsz-24);
+}
+.button-primary {
+  padding-block: 20px;
+  width: 100%;
+  display: block;
+  font-size: var(--fsz-20);
+  background: var(--main-accent-color);
+  border: 1px solid transparent;
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.5s ease-in-out;
+
+  &:hover {
+    border-color: var(--main-text-color);
+  }
+}
+.button-primary-small {
+  @media (min-width: 48em) {
+    max-width: 345px;
+  }
+  @media (min-width: 62.5em) {
+    max-width: 250px;
+  }
+}
+.tell {
+  color: var(--secondary-accent-color);
+  font-size: var(--fsz-18);
+}
