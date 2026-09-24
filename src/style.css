@@ -104,8 +104,7 @@ h1 {
 h2 {
   font-size: clamp(var(--fsz-28), 3.448vw + 0.095rem, var(--fsz-36));
 }
-h3,
-.desc-text {
+h3 {
   font-size: clamp(var(--fsz-24), 4.31vw + -0.944rem, var(--fsz-28));
 }
 img {
@@ -205,6 +204,18 @@ textarea {
 
   @media (min-width: 1599px) {
     margin-block-end: 50px;
+  }
+}
+.section-text {
+  font-size: var(--fsz-14);
+
+  @media (min-width: 767px) {
+    font-size: var(--fsz-24);
+  }
+  @media (min-width: 999px) {
+    font-size: var(--fsz-28);
+  }
+  @media (min-width: 1599px) {
   }
 }
 .accent-font {
@@ -639,4 +650,134 @@ textarea {
   @media (min-width: 1599px) {
     font-size: var(--fsz-18);
   }
+}
+/* why us */
+.why-us {
+  position: relative;
+  z-index: 10;
+  &:before {
+    content: "";
+    background-image: url("./src/assets/images/watering-can.svg");
+    background-size: cover;
+    transform: scaleX(-1);
+    width: 103px;
+    height: 95px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -45px;
+    z-index: -1;
+
+    @media (min-width: 767px) {
+      width: 163px;
+      height: 147px;
+    }
+    @media (min-width: 999px) {
+      width: 255px;
+      height: 210px;
+    }
+    @media (min-width: 1599px) {
+      transform: scale(1);
+      left: 0;
+      top: -220px;
+    }
+  }
+  &:after {
+    content: "";
+    background-image: url("assets/images/leaf-bg.svg");
+    background-size: cover;
+    width: 119px;
+    height: 149px;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -70px;
+
+    @media (min-width: 767px) {
+      width: 237px;
+      height: 297px;
+      bottom: -145px;
+    }
+    @media (min-width: 999px) {
+      bottom: -180px;
+    }
+    @media (min-width: 1599px) {
+      width: 435px;
+      height: 506px;
+      top: -150px;
+    }
+  }
+  .section-text {
+    margin-block-end: 20px;
+    max-width: 300px;
+
+    @media (min-width: 600px) {
+      max-width: 399px;
+    }
+
+    @media (min-width: 999px) {
+      max-width: 583px;
+    }
+    @media (min-width: 1599px) {
+      margin-block-end: 40px;
+    }
+  }
+}
+.why-us-img {
+  max-width: 170px;
+  float: left;
+  shape-outside: circle(50%);
+  margin-inline-end: 15px;
+
+  @media (min-width: 600px) {
+    max-width: 320px;
+    margin-inline-end: 98px;
+  }
+
+  @media (min-width: 999px) {
+    max-width: 470px;
+    margin-inline-end: 133px;
+  }
+
+  @media (min-width: 1599px) {
+    max-width: 587px;
+    margin-inline-end: 126px;
+  }
+}
+.why-us-list {
+  font-size: var(--fsz-14);
+  counter-reset: list;
+
+  @media (min-width: 600px) {
+    font-size: var(--fsz-18);
+  }
+  @media (min-width: 999px) {
+    font-size: var(--fsz-24);
+  }
+  @media (min-width: 1599px) {
+    font-size: var(--fsz-28);
+  }
+}
+.why-us-item::before {
+  counter-increment: list;
+  content: counter(list);
+  padding-inline-end: 6px;
+}
+.why-us-item:not(:last-child) {
+  margin-block-end: 10px;
+
+  @media (min-width: 600px) {
+    margin-block-end: 40px;
+  }
+
+  @media (min-width: 999px) {
+    margin-block-end: 60px;
+  }
+
+  @media (min-width: 1599px) {
+    margin-block-end: 55px;
+  }
+}
+.why-us-content {
+  clear: both;
 }
