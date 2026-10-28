@@ -101,11 +101,15 @@ h3 {
 h1 {
   font-size: clamp(var(--fsz-28), 8.621vw + -2.388rem, var(--fsz-48));
 }
-h2 {
-  font-size: clamp(var(--fsz-28), 3.448vw + 0.095rem, var(--fsz-36));
-}
+h2,
 h3 {
-  font-size: clamp(var(--fsz-24), 4.31vw + -0.944rem, var(--fsz-28));
+  font-size: var(--fsz-24);
+  @media (min-width: 767px) {
+    font-size: var(--fsz-28);
+  }
+  @media (min-width: 999px) {
+    font-size: var(--fsz-36);
+  }
 }
 img {
   max-width: 100%;
@@ -939,5 +943,277 @@ textarea {
   @media (min-width: 600px) {
     min-width: 200px;
     margin-block-end: 20px;
+  }
+}
+/* prices */
+.prices {
+  position: relative;
+}
+.prices:before {
+  content: "";
+  background-image: url("./assets/images/prices.svg");
+  display: block;
+  width: 74px;
+  height: 99px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 0;
+  top: -48px;
+
+  @media (min-width: 767px) {
+    height: 211px;
+    width: 161px;
+  }
+  @media (min-width: 999px) {
+    height: 222px;
+    width: 170px;
+    top: -79px;
+  }
+  @media (min-width: 1599px) {
+    height: 308px;
+    width: 237px;
+    top: -100px;
+  }
+}
+.prices .section-text {
+  margin-block-end: 20px;
+
+  @media (min-width: 767px) {
+    margin-block-end: 30px;
+    max-width: 577px;
+  }
+  @media (min-width: 999px) {
+    margin-block-end: 20px;
+    max-width: 729px;
+  }
+
+  @media (min-width: 1599px) {
+    margin-block-end: 50px;
+  }
+}
+.prices-plan {
+  @media (min-width: 999px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @media (min-width: 1599px) {
+    justify-self: flex-start;
+  }
+}
+.prices-plan-item {
+  border: 1px solid var(--main-accent-color);
+  margin-block-end: 20px;
+  margin-inline: auto;
+  max-width: 470px;
+  padding-block: 10px 28px;
+
+  @media (min-width: 767px) {
+    padding-block: 30px;
+  }
+  @media (min-width: 999px) {
+    padding-block: 50px 40px;
+    font-size: var(--fsz-24);
+    margin-block-end: 0;
+    max-width: 468px;
+  }
+  @media (min-width: 1599px) {
+    padding-block: 60px 88px;
+    padding-inline: 55px;
+    max-width: 589px;
+  }
+}
+.plan-start .prices-plan-title {
+  @media (min-width: 999px) {
+    padding-inline: 59px;
+  }
+}
+.prices-plan-list li:not(:last-child) {
+  margin-block-end: 10px;
+}
+.prices-plan-start {
+  width: max-content;
+  margin-inline: auto;
+  margin-block-end: 80px;
+
+  @media (min-width: 767px) {
+    margin-block-end: 125px;
+  }
+  @media (min-width: 999px) {
+    margin-block-end: 186px;
+  }
+  @media (min-width: 1599px) {
+    margin-block-end: 166px;
+  }
+}
+.prices-plan-premium {
+  padding-inline: 15px;
+  margin-block-end: 20px;
+
+  @media (min-width: 767px) {
+    margin-block-end: 30px;
+  }
+  @media (min-width: 999px) {
+    margin-block-end: 80px;
+    padding-inline: 4px;
+  }
+  @media (min-width: 1050px) {
+    padding-inline: 12px;
+  }
+  @media (min-width: 1599px) {
+    margin-block-end: 60px;
+  }
+}
+.prices-plan-title {
+  text-align: center;
+  margin-block-end: 20px;
+  text-wrap: nowrap;
+
+  @media (min-width: 999px) {
+    margin-block-end: 40px;
+  }
+}
+.prices-plan-cost {
+  font-size: var(--fsz-28);
+  font-weight: var(--fw-semibold);
+  display: block;
+  text-align: center;
+  margin-block-end: 20px;
+
+  @media (min-width: 767px) {
+    font-size: var(--fsz-36);
+    font-weight: var(--fw-bold);
+    margin-block-end: 60px;
+  }
+
+  @media (min-width: 999px) {
+    margin-block-end: 70px;
+  }
+}
+/* how-we-work */
+.how-we-work {
+  position: relative;
+
+  &:before {
+    content: "";
+    background-image: url("./assets/images/steps-bg.svg");
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 85px;
+    height: 134px;
+    position: absolute;
+    right: 0;
+    bottom: -70px;
+    @media (min-width: 767px) {
+      width: 189px;
+      height: 270px;
+    }
+    @media (min-width: 999px) {
+      width: 229px;
+      height: 325px;
+      bottom: -142px;
+    }
+    @media (min-width: 1599px) {
+      width: 395px;
+      height: 568px;
+      top: -170px;
+    }
+  }
+}
+
+.work-stages {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 27px 24px;
+  counter-reset: numbers;
+  @media (min-width: 767px) {
+    gap: 55px 15px;
+  }
+  @media (min-width: 767px) {
+    gap: 45px 10px;
+  }
+  @media (min-width: 1599px) {
+    padding-inline-end: 132px;
+  }
+}
+.work-stages-item {
+  font-size: var(--fsz-14);
+
+  @media (min-width: 767px) {
+    font-size: var(--fsz-18);
+    line-height: 1;
+  }
+  @media (min-width: 999px) {
+    font-size: var(--fsz-28);
+    font-weight: var(--fw-semibold);
+  }
+
+  &:before {
+    content: counters(numbers, ".", decimal-leading-zero) " ";
+    counter-increment: numbers;
+    font-family: var(--secondary-ff);
+    font-size: var(--fsz-36);
+    line-height: 1;
+    letter-spacing: -10%;
+    color: rgba(109, 151, 115, 0.3);
+    -webkit-text-stroke: 0.5px var(--main-text-color);
+    vertical-align: middle;
+    margin-inline-end: -30px;
+
+    @media (min-width: 767px) {
+      font-size: var(--fsz-64);
+      margin-inline-end: -30px;
+    }
+    @media (min-width: 999px) {
+      font-size: var(--fsz-96);
+      font-weight: var(--fw-regular);
+      margin-inline-end: -99px;
+    }
+    @media (min-width: 1599px) {
+      font-size: var(--fsz-128);
+      margin-inline-end: -93px;
+    }
+  }
+  &:nth-child(1) {
+    grid-column: 1 / 4;
+    @media (min-width: 600px) {
+      grid-column: 1 / 3;
+    }
+  }
+  &:nth-child(2) {
+    grid-column: 4 / -1;
+    justify-self: flex-end;
+    @media (min-width: 600px) {
+      grid-column: 3 / 5;
+      justify-self: start;
+    }
+  }
+  &:nth-child(3) {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    justify-self: center;
+    @media (min-width: 600px) {
+      grid-row: 1;
+      grid-column: 5 / -1;
+    }
+  }
+  &:nth-child(4) {
+    grid-row: 3;
+    grid-column: 1/ 4;
+    @media (min-width: 600px) {
+      grid-row: 2;
+      justify-self: flex-end;
+    }
+  }
+  &:nth-child(5) {
+    grid-row: 3;
+    grid-column: 4 / -1;
+    justify-self: center;
+    @media (min-width: 600px) {
+      grid-row: 2;
+      justify-self: start;
+    }
   }
 }
